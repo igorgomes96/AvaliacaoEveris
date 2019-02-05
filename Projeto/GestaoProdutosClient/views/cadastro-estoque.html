@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/lib/typeahead.js-master/css/typeaheadjs.css">
+
+
+    <title>Gestão de Produtos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="header"></div>
+
+        <div class="container-fluid" id="page-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <h5 class="card-header">Cadastro de Entrada/Saída de Produtos</h5>
+                        <div class="card-body">
+                            <form id="form-estoque" class="needs-validation" novalidate>
+
+                                <div class="form-row">
+                                    <div class="form-group col-lg-4 col-md-6">
+                                        <label for="data">Data</label>
+                                        <input type="date" required="required" class="form-control" name="data" id="data" placeholder="Data de referência">
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-2 col-sm-4">
+                                        <label for="empresa-id">Cód. Empresa</label>
+                                        <input type="text" required class="form-control" id="empresa-id" name="empresaId"
+                                            disabled="disabled">
+                                    </div>
+
+                                    <div class="form-group col-md-4 col-sm-8">
+                                        <label for="empresa">Empresa</label>
+                                        <input type="text" required="required" class="form-control" id="empresa" name="empresa" placeholder="Digite o nome da Empresa">
+                                    </div>
+
+                                    <div class="form-group col-md-2 col-sm-4">
+                                        <label for="produto-id">Cód. Produto</label>
+                                        <input type="text" required="required" class="form-control" id="produto-id" name="produtoId"
+                                            disabled="disabled">
+                                    </div>
+
+                                    <div class="form-group col-md-4 col-sm-8">
+                                        <label for="produto">Produto</label>
+                                        <input type="text" required="required" class="form-control" id="produto" name="produto" placeholder="Digite o nome do produto">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="entrada">Entrada</label>
+                                        <input type="number" required="required" class="form-control" id="entrada" name="entrada"
+                                            placeholder="Qtda. de Entrada do produto">
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="saida">Saída</label>
+                                        <input type="number" required="required" class="form-control" id="saida" name="saida" placeholder="Qtda. de de saída do produto">
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label for="estoque">Estoque</label>
+                                        <input type="number" required="required" class="form-control" id="estoque" name="qtda" placeholder="Qtda. em estoque">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-success">Salvar</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="/node_modules/mustache/mustache.min.js"></script>
+    <script src="/lib/typeahead.js-master/dist/typeahead.bundle.js"></script>
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+
+    <script src="/js/shared.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/httpApi/estoque-api.js"></script>
+    <script src="/js/httpApi/empresas-api.js"></script>
+    <script src="/js/httpApi/produtos-api.js"></script>
+    <script src="/js/cadastro-estoque.js"></script>
+
+
+</body>
+
+
+</html>

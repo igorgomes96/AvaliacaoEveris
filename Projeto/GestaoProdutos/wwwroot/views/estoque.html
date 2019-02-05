@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="/lib/typeahead.js-master/css/typeaheadjs.css">
+    <link rel="stylesheet" href="/node_modules/spinkit/css/spinkit.css">
+    <link rel="stylesheet" href="/node_modules/spinkit/css/spinners/9-cube-grid.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+
+
+    <title>Gestão de Produtos</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="header"></div>
+
+        <div class="container-fluid" id="page-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <h5 class="card-header">Estoque de Produtos</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <a class="btn btn-primary mb-3" href="/views/cadastro-estoque.html">Novo</a>
+
+                                    <div class="form-row">
+                                        <div class="col-md-4">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="planilha">
+                                                <label class="custom-file-label" for="planilha" data-browse="Procurar...">Importar
+                                                    Planilha</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <h6 class="card-title">Filtro</h6>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="data">Data</label>
+                                            <input type="date" name="data" id="data" class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="empresa">Empresa</label>
+                                            <input type="text" name="empresa" id="empresa" class="form-control"
+                                                placeholder="Filtrar por empresa...">
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <label for="produto">Produto</label>
+                                            <input type="text" name="produto" id="produto" class="form-control"
+                                                placeholder="Filtrar por produto...">
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <nav>
+                                        <ul class="pagination justify-content-center">
+                                        </ul>
+                                    </nav>
+
+                                    <div class="table-responsive" id="table-estoque">
+                                        <table class="table table-striped" id="estoque-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="orderable asc">Data</th>
+                                                    <th class="orderable">Empresa</th>
+                                                    <th>Código do Produto</th>
+                                                    <th class="orderable">Produto</th>
+                                                    <th class="text-right orderable">Entrada</th>
+                                                    <th class="text-right orderable">Saída</th>
+                                                    <th class="text-right orderable">Estoque</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <nav>
+                                        <ul class="pagination justify-content-center">
+                                        </ul>
+                                    </nav>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- templates -->
+        <template id="template-estoque">
+            <tr>
+                <td> {{ data }} </td>
+                <td> {{ empresa.nome }} </td>
+                <td> {{ produtoId }} </td>
+                <td> {{ produto.nome }} </td>
+                <td class="text-right"> {{ entrada }} </td>
+                <td class="text-right"> {{ saida }} </td>
+                <td class="text-right"> {{ qtda }} </td>
+                <td class="text-right">
+                    <a class="btn btn-sm btn-outline-primary" href="cadastro-estoque.html?id={{id}}"><i class="fas fa-pencil-alt"></i></a>
+                    <button class="btn btn-sm btn-outline-danger btn-delete" data-id="{{id}}"><i class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </template>
+
+        <template id="template-page">
+            <li class="page-item">
+                <a class="page-link">{{ i }}</a>
+            </li>
+        </template>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="/node_modules/mustache/mustache.min.js"></script>
+    <script src="/node_modules/moment/min/moment.min.js"></script>
+    <script src="/lib/typeahead.js-master/dist/typeahead.bundle.js"></script>
+    <script src="/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+
+    <script src="/js/config.js"></script>
+    <script src="/js/shared.js"></script>
+    <script src="/js/httpApi/estoque-api.js"></script>
+    <script src="/js/httpApi/produtos-api.js"></script>
+    <script src="/js/httpApi/empresas-api.js"></script>
+    <script src="/js/estoque.js"></script>
+
+
+</body>
+
+</html>

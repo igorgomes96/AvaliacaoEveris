@@ -1,0 +1,33 @@
+body {
+    background: #e4e4e4;
+}
+
+#page-content {
+    padding: 3% 5%;
+}
+
+th.orderable {
+    cursor: pointer;
+}
+
+th.orderable:hover {
+    background: #dee2e6;
+}
+
+th.orderable.desc::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d7";
+    float: right;
+    margin-left: 5px;
+}
+
+th.orderable.asc::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d8";
+    float: right;
+    margin-left: 5px;
+}
+
+.sk-cube-grid .sk-cube {
+    background-color: #007bff;
+}
